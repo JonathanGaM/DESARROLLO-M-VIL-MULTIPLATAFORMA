@@ -1,0 +1,150 @@
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      align-items: flex-start; 
+      justify-content: center;
+      height: 100vh;
+      background-color: #1f0353; 
+    }
+
+    .contenedor-principal {
+      max-width: 600px;
+      width: 100%;
+      text-align: center;
+      padding: 20px; 
+      box-sizing: border-box; 
+      background-color: #ffffff;
+      border-radius: 10px;
+
+    }
+    .icono-info {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 10px;
+    }
+
+    .encabezado {
+      position: relative;
+      color: rgb(7, 7, 7);
+      padding: 15px;
+      border-radius: 10px;
+      background-color: #ffffff;
+      text-align: left;
+    }
+
+    h1 {
+      margin: 10px;
+    }
+
+    .lupa {
+      position: absolute;
+      top: 0;
+      right: 0;
+      margin: 30px;
+      width: 30px;
+      height: auto;
+      cursor: pointer;
+    }
+
+    .secciones {
+      text-align: center;
+      color: rgb(14, 13, 13);
+      padding: 20px;
+      border-radius: 10px;
+      background-color: #ffffff;
+      margin-top: 20px;
+    }
+
+    .secciones ul {
+      display: flex;
+      justify-content: space-around;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .secciones li {
+      margin-right: 15px;
+    }
+
+    .iconos {
+      display: flex;
+      justify-content: space-around;
+      margin-top: 20px;
+    }
+
+    .musica {
+      text-align: left; 
+      color: #333; 
+      padding: 20px;
+      border-radius: 10px;
+      background-color: #fff; 
+      margin-top: 20px;
+    }
+
+    .cancion {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    .imagen-cancion {
+      width: 50px;
+      height: 50px;
+      border-radius: 20%;
+      margin-right: 10px;
+    }
+    .imagen-cancio {
+      width: 30px;
+      height: 30px;
+      border-radius: 20%;
+      margin-right: 10px;
+    }
+    .ic img {
+      width: 100%; 
+      border-radius: 10px; 
+    }
+
+
+    .info-cancion {
+      display: flex;
+      flex-direction: column; 
+      align-items: flex-start; 
+    }
+
+    .nombre-cancion {
+      color: #333; 
+    }
+    .nombre{
+      color: #333; 
+      margin: 10px;
+    }
+
+    .autor-cancion {
+      font-size: 12px; 
+      color: #555; 
+    }
+
+    .reproduccion {
+      text-align: center;
+      color: white;
+      padding: 20px;
+      border-radius: 10px;
+      background-color: #ffffff;
+      margin-top: 20px;
+    }
+
+    .icono {
+      width: 0px;
+      height: 10px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 5px;
+    }
+    
+  
