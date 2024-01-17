@@ -13,30 +13,30 @@
         <div class="calculator">
             <input type="text" id="display" readonly>
             <div class="buttons">
-                <button onclick="clearAll()">C</button>
-                <button onclick="clearLast()">CE</button>
-                <button onclick="appendCharacter('%')">%</button>
-                <button onclick="appendCharacter('/')">/</button>
-                <button onclick="appendCharacter('*')">*</button>
-                <button onclick="appendCharacter('-')">-</button>
-                <button onclick="appendCharacter('6')">6</button>
-                <button onclick="appendCharacter('7')">7</button>
-                <button onclick="appendCharacter('8')">8</button>
-                <button onclick="appendCharacter('9')">9</button>
+                <button id="clearAll" onclick="clearAll()">C</button>
+                <button id="clearLast" onclick="clearLast()">CE</button>
+                <button id="percent" onclick="appendCharacter('%')">%</button>
+                <button id="divide" onclick="appendCharacter('/')">/</button>
+                <button id="multiply" onclick="appendCharacter('*')">*</button>
+                <button id="subtract" onclick="appendCharacter('-')">-</button>
+                <button id="six" onclick="appendCharacter('6')">6</button>
+                <button id="seven" onclick="appendCharacter('7')">7</button>
+                <button id="eight" onclick="appendCharacter('8')">8</button>
+                <button id="nine" onclick="appendCharacter('9')">9</button>
 
-                <button onclick="appendCharacter('+')">+</button>
-                <button onclick="appendCharacter('5')">5</button>
-                <button onclick="appendCharacter('4')">4</button>
+                <button id="add" onclick="appendCharacter('+')">+</button>
+                <button id="five" onclick="appendCharacter('5')">5</button>
+                <button id="four" onclick="appendCharacter('4')">4</button>
 
-                <button onclick="appendCharacter('3')">3</button>
-                <button onclick="appendCharacter('2')">2</button>
-                <button onclick="appendCharacter('Math.sqrt(')">√</button>
-                <button onclick="appendCharacter('.')">.</button>
-                <button onclick="calculateResult()">=</button>
+                <button id="three" onclick="appendCharacter('3')">3</button>
+                <button id="two" onclick="appendCharacter('2')">2</button>
+                <button id="sqrt" onclick="appendCharacter('Math.sqrt(')">√</button>
+                <button id="decimal" onclick="appendCharacter('.')">.</button>
+                <button id="equals" onclick="calculateResult()">=</button>
 
-                <button onclick="appendCharacter('1')">1</button>
-                <button onclick="appendCharacter('0')">0</button>
-                <button onclick="appendCharacter('**2')">x²</button>
+                <button id="one" onclick="appendCharacter('1')">1</button>
+                <button id="zero" onclick="appendCharacter('0')">0</button>
+                <button id="square" onclick="appendCharacter('**2')">x²</button>
             </div>
         </div>
     </div>
