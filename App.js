@@ -1,40 +1,143 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet,TextInput, TouchableOpacity, Text, View,Image } from 'react-native';
-
-
+import React, { useState } from 'react';
+import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 
 export default function App() {
+  const [result, setResult] = useState('');
+
+  const handleButtonPress = (button) => {
+    setResult(result + button);
+  };
+
+  const handleClear = () => {
+    setResult('');
+  };
+
+  const handleCalculate = () => {
+    try {
+      setResult(eval(result).toString());
+    } catch (error) {
+      setResult('Error');
+    }
+  };
+
   return (
     <View style={styles.container}>
-        <View style={styles.header}>
+      <Text style={styles.result}>{result}</Text>
+      <View style={styles.buttonRow}>
+        <TouchableOpacity
+          style={styles.button}
+          onPress={() => handleButtonPress('7')}>
+          <Text style={styles.buttonText}>7</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={styles.button}
+          onPress={() => handleButtonPress('8')}>
+          <Text style={styles.buttonText}>8</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={styles.button}
+          onPress={() => handleButtonPress('9')}>
+          <Text style={styles.buttonText}>9</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={styles.button}
+          onPress={() => handleButtonPress('/')}>
+          <Text style={styles.buttonText}>/</Text>
+        </TouchableOpacity>
       </View>
-      <View style={styles.body}>
-        
-        
-        <Image
-            source={require('./open.png')}
-            style={styles.image}
-          />
-        <View style={styles.loginForm}>
-          <Text style={styles.loginText}>Ingresa tu contraseña</Text>
-          <TextInput style={styles.input} placeholder="Correo" />
-          <TextInput style={styles.input} placeholder="Contraseña" secureTextEntry={true} />
-          <Text style={styles.footerLink}>¿Olvidó su contraseña?</Text>
-          <TouchableOpacity style={styles.continueButton}>
-          <Text style={styles.continueButtonText}>Continuar</Text>
-          </TouchableOpacity>
-          <Text style={styles.registerText}>¿No tiene una cuenta? <Text style={styles.footerLink}>Regístrese</Text> </Text>
-        </View>
+      {/* Repeat the above pattern for the other rows of buttons */}
+      {/* Add the buttons for other numbers and operators */}
+      {/* Add more rows for the remaining buttons */}
+      <View style={styles.buttonRow}>
+        <TouchableOpacity
+          style={styles.button}
+          onPress={() => handleButtonPress('4')}>
+          <Text style={styles.buttonText}>4</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={styles.button}
+          onPress={() => handleButtonPress('5')}>
+          <Text style={styles.buttonText}>5</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={styles.button}
+          onPress={() => handleButtonPress('6')}>
+          <Text style={styles.buttonText}>6</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={styles.button}
+          onPress={() => handleButtonPress('*')}>
+          <Text style={styles.buttonText}>*</Text>
+        </TouchableOpacity>
       </View>
-      <View style={styles.footer}>
-        <View style={styles.footerLine}></View>
-        <View style={styles.footerLinks}>
-          <Text style={styles.footerLink}>Condiciones de uso</Text>
-          <View style={styles.footerLinkSeparator}></View>
-          <Text style={styles.footerLink}>Política de privacidad</Text>
-        </View>
+      <View style={styles.buttonRow}>
+        <TouchableOpacity
+          style={styles.button}
+          onPress={() => handleButtonPress('1')}>
+          <Text style={styles.buttonText}>1</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={styles.button}
+          onPress={() => handleButtonPress('2')}>
+          <Text style={styles.buttonText}>2</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={styles.button}
+          onPress={() => handleButtonPress('3')}>
+          <Text style={styles.buttonText}>3</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={styles.button}
+          onPress={() => handleButtonPress('-')}>
+          <Text style={styles.buttonText}>-</Text>
+        </TouchableOpacity>
       </View>
-      <StatusBar style="auto" />
+      <View style={styles.buttonRow}>
+        <TouchableOpacity
+          style={styles.button}
+          onPress={() => handleButtonPress('0')}>
+          <Text style={styles.buttonText}>0</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={styles.button}
+          onPress={() => handleButtonPress('.')}>
+          <Text style={styles.buttonText}>.</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={styles.button}
+          onPress={handleCalculate}>
+          <Text style={styles.buttonpmnText}>=</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={styles.button}
+          onPress={() => handleButtonPress('+')}>
+          <Text style={styles.buttonText}>+</Text>
+        </TouchableOpacity>
+      </View>
+      
+      <View style={styles.buttonRow}>
+     
+  <TouchableOpacity
+    style={styles.button}
+    onPress={() => handleButtonPress('(')}>
+    <Text style={styles.buttonText}>(</Text>
+  </TouchableOpacity>
+  <TouchableOpacity
+    style={styles.button}
+    onPress={() => handleButtonPress(')')}>
+    <Text style={styles.buttonText}>)</Text>
+  </TouchableOpacity>
+  <TouchableOpacity
+    style={styles.button}
+    onPress={() => handleButtonPress('%')}>
+    <Text style={styles.buttonText}>%</Text>
+  </TouchableOpacity>
+  <TouchableOpacity
+    style={[styles.button, { flex: 0, borderRadius: 50 }]} // Añade borderRadius: 50
+    onPress={handleClear}>
+    <Text style={[styles.buttonText, { color: 'white' }]}>AC</Text>
+  </TouchableOpacity>
+</View>
     </View>
   );
 }
@@ -42,100 +145,28 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-  },
-  header: {
-    height: 50,
-    backgroundColor: '#f2f2f2',
     justifyContent: 'center',
     alignItems: 'center',
+    backgroundColor: '#504d4d',
   },
-  headerText: {
-    fontWeight: 'bold',
-    fontSize: 20,
+  result: {
+    fontSize: 50,
+    marginBottom: 40,
   },
-  body: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  bodyText: {
-    fontSize: 18,
-    marginBottom: 20,
-  },
-  imageContainer: {
-    justifyContent: 'center',
-    alignItems: 'center',
-    
-   
-  },
-  image: {
-
-    width: 40, // Tamaño de la imagen
-    height: 40, // Tamaño de la imagen
-    marginBottom: 90,
-  },
-  loginForm: {
-    width: '80%',
-    borderWidth: 1,
-    borderColor: '#fff',
-    borderRadius: 5,
-    padding: 10,
-  },
-  loginText: {
-    fontWeight: 'bold',
-    fontSize: 19,
-    marginBottom: 15,
-    textAlign: 'center', //centrar texto
-    
-  },
-  input: {
-    borderWidth: 1,
-    borderColor: '#ccc',
-    borderRadius: 5,
-    padding: 10,
-    marginBottom: 10,
-  },
-  forgotPassword: {
-    marginBottom: 10,
-    color:'green',
-  },
-  continueButton: {
-    backgroundColor: 'rgb(55, 205, 165)',
-    padding: 10,
-    borderRadius: 5,
-    marginTop: 10,
-  },
-  continueButtonText: {
-    color: '#fff',
-    textAlign: 'center',
-  },
-  registerText: {
-    textAlign: 'center',
-    marginTop: 10,
-  },
-  footer: {
-    height: 50,
-    backgroundColor: '#fff',
-  },
-  footerLine: {
-    height: 1,
-    backgroundColor: '#ccc',
-  },
-  footerLinks: {
+  buttonRow: {
     flexDirection: 'row',
-    justifyContent: 'center',
+  },
+  button: {
     alignItems: 'center',
-    height: 49,
+    justifyContent: 'center',
+    backgroundColor: '#DDDDDD',
+    padding: 20,
+    margin: 10,
+    borderRadius: 50,
+    width: 100,
+    height: 80,
   },
-  footerLink: {
-    color: 'rgb(55, 205, 165)',
-    marginRight: 10,
-    marginLeft: 10,
-  },
-  footerLinkSeparator: {
-    width: 1,
-    height: 20,
-    backgroundColor: '#ccc',
+  buttonText: {
+    fontSize: 25,
   },
 });
